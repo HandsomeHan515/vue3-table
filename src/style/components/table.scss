@@ -1,0 +1,155 @@
+$table-preflx-cls: "b-table";
+
+.#{$table-preflx-cls} {
+    &-wrapper {
+        position: relative;
+        border-right: 1px solid #ccc;
+    }
+    width: inherit;
+    height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    color: #333;
+    font-size: 12px;
+    background-color: #fff;
+    box-sizing: border-box;
+
+    &-hide {
+        opacity: 0;
+    }
+
+    &-title, &-footer{
+        height: 48px;
+        line-height: 48px;
+        border-bottom: 1px solid #c2c2c2;
+    }
+
+    &-footer{
+        border-bottom: none;
+    }
+
+    &-header{
+        overflow: hidden;
+    }
+    
+    &-body{
+        overflow: auto;
+    }
+
+    table {
+        table-layout: fixed;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+    }
+
+    th, td {
+        min-width: 0;
+        height: 48px;
+        box-sizing: border-box;
+        text-align: center;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+        border-bottom: 1px solid #ccc;
+    }
+
+    th {
+        height: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        background-color: #fff;
+    }
+
+    td {
+        background-color: #fff;
+        transition: background-color .3 ease-in-out;
+    }
+
+    &-column, &-column {
+        &-left{
+            text-align: left;
+        }
+        &-center{
+            text-align: center;
+        }
+        &-right{
+            text-align: right;
+        }
+    }
+
+    &-border {
+        th, td {
+            border-right: 1px solid #ccc;
+        }
+    }
+
+    &-stripe &-body {
+        tr:nth-child(2n) {
+            td{
+                background-color: #ddd;
+            }
+        }
+    }
+
+    &-cell{
+        padding-left: 18px;
+        padding-right: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-break: break-all;
+        box-sizing: border-box;
+
+        &-ellipsis {
+            word-break: keep-all;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &-hidden{
+        visibility: hidden;
+    }
+
+    th &-cell{
+        display: inline-block;
+        word-wrap: normal;
+        vertical-align: middle;
+    }
+
+    &-tip {
+        table {
+            width: 100%;
+
+            td {
+              text-align: center;
+            }
+        }
+    }
+
+    &-fixed , &-fixed-right {
+        position: absolute;
+        top: 0;
+        left: 1;
+        box-shadow: 2px 0 6px -2px rgba(0, 0, 0, .2);
+    }
+
+    &-fixed-right{
+        top: 0;
+        right: 0;
+        box-shadow: -2px 0 6px -2px rgba(0, 0, 0, 0.2);
+        td {
+            border-right: 1px solid #ccc;
+        }
+    }
+
+    &-fixed-header {
+        overflow: hidden;
+    }
+
+    &-fixed-body{
+        overflow: hidden;
+        position: relative;
+        z-index: 3;
+    }
+}
